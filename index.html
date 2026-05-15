@@ -14,126 +14,30 @@
             --card-bg: #151515; 
             --text-main: #ffffff; 
             --text-muted: #a0a0a0; 
-            --accent: #d4af37; /* Dorado Branca */
+            --accent: #d4af37;
         }
-
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: 'Montserrat', sans-serif;
-            padding-bottom: 50px;
-        }
-
-        /* ENCABEZADO */
-        header {
-            text-align: center;
-            padding: 20px 20px 10px 20px;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://www.transparenttextures.com/patterns/wood-pattern.png') #2a2522;
-        }
-
-        header h1 {
-            font-family: 'Rye', serif;
-            font-size: 2.5rem;
-            letter-spacing: 3px;
-            margin: 0;
-            text-transform: uppercase;
-        }
-
-        header p {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-top: 5px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        /* BARRA DE NAVEGACIÓN DESLIZABLE */
-        .nav-categories {
-            background-color: #000000; 
-            padding: 12px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid #333;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.5);
-        }
-
-        .nav-list {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0 15px;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            -ms-overflow-style: none;  
-            scrollbar-width: none;  
-        }
-
-        .nav-list::-webkit-scrollbar {
-            display: none; 
-        }
-
-        .nav-item {
-            padding: 8px 18px;
-            margin-right: 10px;
-            border-radius: 20px;
-            background-color: #222;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            font-weight: 600;
-            white-space: nowrap;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 1px solid transparent;
-        }
-
-        .nav-item.active {
-            background-color: rgba(212, 175, 55, 0.15); 
-            color: var(--accent);
-            border: 1px solid var(--accent);
-        }
-
-        /* CONTENEDOR DEL MENÚ */
-        .menu-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 15px;
-        }
-
-        .menu-section {
-            display: none;
-            animation: fadeIn 0.4s ease-in-out;
-        }
-
-        .menu-section.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .category-title {
-            font-family: 'Rye', serif;
-            font-size: 1.5rem;
-            margin-top: 15px;
-            margin-bottom: 15px;
-            border-bottom: 1px solid var(--accent);
-            padding-bottom: 5px;
-        }
-
-        /* ESTILOS DE PLATILLOS Y MODAL */
+        body { margin: 0; padding: 0; background-color: var(--bg-color); color: var(--text-main); font-family: 'Montserrat', sans-serif; padding-bottom: 50px; }
+        header { text-align: center; padding: 20px 20px 10px 20px; background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://www.transparenttextures.com/patterns/wood-pattern.png') #2a2522; }
+        header h1 { font-family: 'Rye', serif; font-size: 2.5rem; letter-spacing: 3px; margin: 0; text-transform: uppercase; }
+        header p { font-size: 0.8rem; color: var(--text-muted); margin-top: 5px; text-transform: uppercase; letter-spacing: 2px; }
+        .nav-categories { background-color: #000000; padding: 12px 0; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #333; box-shadow: 0 4px 6px rgba(0,0,0,0.5); }
+        .nav-list { display: flex; list-style: none; margin: 0; padding: 0 15px; overflow-x: auto; scroll-behavior: smooth; -ms-overflow-style: none; scrollbar-width: none; justify-content: center; }
+        .nav-list::-webkit-scrollbar { display: none; }
+        .nav-item { padding: 8px 18px; margin: 0 5px; border-radius: 20px; background-color: #222; color: var(--text-muted); font-size: 0.85rem; font-weight: 600; white-space: nowrap; cursor: pointer; transition: all 0.3s ease; border: 1px solid transparent; }
+        .nav-item.active { background-color: rgba(212, 175, 55, 0.15); color: var(--accent); border: 1px solid var(--accent); }
+        @media (max-width: 600px) { .nav-list { justify-content: flex-start; } }
+        .menu-container { max-width: 800px; margin: 0 auto; padding: 15px; }
+        .menu-section { display: none; animation: fadeIn 0.4s ease-in-out; }
+        .menu-section.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .category-title { font-family: 'Rye', serif; font-size: 1.5rem; margin-top: 25px; margin-bottom: 15px; border-bottom: 1px solid var(--accent); padding-bottom: 5px; }
         .menu-item { display: flex; background-color: var(--card-bg); border-radius: 8px; margin-bottom: 15px; padding: 15px; cursor: pointer; border: 1px solid #222; }
         .item-details { flex: 1; padding-right: 15px; display: flex; flex-direction: column; justify-content: center; }
         .item-title { font-size: 1.1rem; font-weight: 600; margin: 0 0 5px 0; }
-        .item-desc { font-size: 0.85rem; color: var(--text-muted); margin: 0 0 10px 0; display: -webkit-box; -webkit-line-clam: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .item-desc { font-size: 0.85rem; color: var(--text-muted); margin: 0 0 10px 0; }
         .item-price { font-size: 1.1rem; font-weight: 600; color: var(--accent); }
         .item-image-container { width: 100px; height: 100px; border-radius: 8px; overflow: hidden; flex-shrink: 0; }
         .item-image-container img { width: 100%; height: 100%; object-fit: cover; }
-        
         .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); backdrop-filter: blur(5px); }
         .modal-content { background-color: var(--card-bg); margin: 10% auto; padding: 20px; width: 90%; max-width: 500px; border-radius: 12px; position: relative; text-align: center; border: 1px solid var(--accent); }
         .close-btn { position: absolute; top: 10px; right: 15px; color: var(--text-muted); font-size: 28px; font-weight: bold; cursor: pointer; }
@@ -141,6 +45,9 @@
         .modal-title { font-family: 'Rye', serif; font-size: 1.5rem; margin: 10px 0; }
         .modal-desc { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px; }
         .modal-price { font-size: 1.3rem; color: var(--accent); font-weight: bold; }
+        .survey-container { background-color: var(--card-bg); padding: 20px; border-radius: 8px; border: 1px solid #222; text-align: center; }
+        .survey-input { box-sizing: border-box; width: 100%; padding: 12px; margin: 10px 0; border-radius: 5px; border: 1px solid var(--text-muted); background-color: var(--bg-color); color: var(--text-main); font-family: 'Montserrat', sans-serif; }
+        .survey-btn { background-color: var(--accent); color: #000; font-weight: bold; border: none; padding: 15px 20px; border-radius: 5px; cursor: pointer; transition: background 0.3s; width: 100%; font-family: 'Montserrat', sans-serif; margin-top: 10px;}
     </style>
 </head>
 <body>
@@ -153,81 +60,112 @@
     <nav class="nav-categories">
         <ul class="nav-list">
             <li class="nav-item active" onclick="showCategory('tradicional', this)">Menú Tradicional</li>
-            <li class="nav-item" onclick="showCategory('vip', this)">Menú VIP</li>
+            <li class="nav-item" onclick="showCategory('cortes', this)">Cortes de Carne</li> 
             <li class="nav-item" onclick="showCategory('promociones', this)">Promociones</li>
-            <li class="nav-item" onclick="showCategory('vinos', this)">Menú de Vinos</li>
-            <li class="nav-item" onclick="showCategory('destilados', this)">Destilados</li>
-            <li class="nav-item" onclick="showCategory('cortes', this)">Cortes de Carne</li>
+            <li class="nav-item" onclick="showCategory('vinos', this)">Vinos</li>
             <li class="nav-item" onclick="showCategory('mixologia', this)">Mixología</li>
+            <li class="nav-item" onclick="showCategory('encuesta', this)">Encuesta</li>
         </ul>
     </nav>
 
     <main class="menu-container">
         
         <section id="tradicional" class="menu-section active">
-            <div class="category-title">Tradición Uruguaya</div>
             
-            <div class="menu-item" onclick="openModal('Empanadas Criollas', 'Clásicas empanadas de carne cortada a cuchillo, aceitunas y huevo duro.', '$120.00', 'https://images.unsplash.com/photo-1628840042765-356cda07504e?q=80&w=400&auto=format&fit=crop', '')">
+            <div class="category-title">ENTRADAS</div>    
+            <div class="menu-item" onclick="openModal('Costillitas de elote', 'Crujientes costillitas de elote bañadas en salsa de chipotle', document.getElementById('precio-costillitas').innerText, 'costillitas.jpg', 'costillitas.glb')">
                 <div class="item-details">
-                    <h3 class="item-title">Empanadas Criollas (2pz)</h3>
-                    <p class="item-desc">Clásicas empanadas de carne cortada a cuchillo, aceitunas y huevo duro.</p>
-                    <span class="item-price">$120.00</span>
+                    <h3 class="item-title">Costillitas de elote</h3>
+                    <p class="item-desc">crujientes costillitas de elote bañadas en salsa de chipotle</p>
+                    <span class="item-price" id="precio-costillitas">$130.00</span>
                 </div>
-                <div class="item-image-container">
-                    <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?q=80&w=200&auto=format&fit=crop" alt="Empanadas">
-                </div>
+                <div class="item-image-container"><img src="costillitas.jpg" alt="COSTILLITAS"></div>
             </div>
 
-            <div class="menu-item" onclick="openModal('Strudel de Manzana', 'Delicioso postre horneado con manzanas, pasas, canela y masa crujiente.', '$140.00', 'ruta_a_tu_foto_del_strudel.jpg', 'strudel.glb')">
+            <div class="category-title">PIZZAS</div>    
+            <div class="menu-item" onclick="openModal('Pizza Sencilla', 'Clásica base de pizza de masa madre con salsa de tomate y mucho queso mozzarella', document.getElementById('precio-pizza').innerText, 'pizza.jpg', 'PizzaMargaritaglb.glb')">
+                <div class="item-details">
+                    <h3 class="item-title">Pizza Sencilla</h3>
+                    <p class="item-desc">Agrega complementos a tu gusto</p>
+                    <span class="item-price" id="precio-pizza">$130.00</span>
+                </div>
+                <div class="item-image-container"><img src="pizza.jpg" alt="PIZZA"></div>
+            </div>
+
+            <div class="category-title">PASTAS</div>    
+            <div class="menu-item" onclick="openModal('CANELONES', 'Canelones estilo branca hechos con carne o espiaca bañados en cualquiera de nuestras salsas', document.getElementById('precio-canelones').innerText, 'Captura de pantalla 2026-05-14 211226.jpg', 'Canelones3.glb')">
+                <div class="item-details">
+                    <h3 class="item-title">CANELONES</h3>
+                    <p class="item-desc">ESPINACA O CARNE 650 g</p>
+                    <span class="item-price" id="precio-canelones">$175.00</span>
+                </div>
+                <div class="item-image-container"><img src="Captura de pantalla 2026-05-14 211226.jpg" alt="CANELONES"></div>
+            </div>
+
+            <div class="category-title">POSTRES</div>
+            <div class="menu-item" onclick="openModal('Strudel de Manzana', 'Delicioso postre horneado con manzanas, pasas, canela y masa crujiente.', document.getElementById('precio-strudel').innerText, 'STRUDENT.jpg', 'strudel.glb')">
                 <div class="item-details">
                     <h3 class="item-title">Strudel de Manzana</h3>
-                    <p class="item-desc">Delicioso postre horneado con manzanas, pasas, canela y masa crujiente.</p>
-                    <span class="item-price">$140.00</span>
+                    <p class="item-desc">Recién horneado con manzanas, pasas y canela.</p>
+                    <span class="item-price" id="precio-strudel">$115.00</span>
                 </div>
-                <div class="item-image-container">
-                    <img src="../strudel.glb" alt="Strudel de Manzana">
-                </div>
+                <div class="item-image-container"><img src="STRUDENT.jpg" alt="Strudel"></div>
             </div>
 
+            <div class="menu-item" onclick="openModal('Marquis de Chocolate', 'Cremoso pastel de chocolate con base de galleta crujiente.', document.getElementById('precio-marquis').innerText, 'marquis.jpg', 'marquischocolate.glb')">
+                <div class="item-details">
+                    <h3 class="item-title">Marquis de Chocolate</h3>
+                    <p class="item-desc">Cremoso pastel de chocolate con base de galleta crujiente.</p>
+                    <span class="item-price" id="precio-marquis">$195.00</span>
+                </div>
+                <div class="item-image-container"><img src="marquis.jpg" alt="Marquis de Chocolate"></div>
+            </div>
         </section>
 
         <section id="cortes" class="menu-section">
             <div class="category-title">Cortes Premium</div>
-            
-            <div class="menu-item" onclick="openModal('Corte Vacío', 'Auténtico corte uruguayo a la parrilla, jugoso y con un sabor intenso.', '$450.00', 'https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?q=80&w=400&auto=format&fit=crop', 'ruta_a_tu_modelo3d.glb')">
+            <div class="menu-item" onclick="openModal('Parrillada para 4 personas', 'Acompañados de papas a la francesa y ensalada mixta.', document.getElementById('precio-parrillada').innerText, 'parrillada.jpg', 'ParrilladaPx4.glb')">
                 <div class="item-details">
-                    <h3 class="item-title">Corte Vacío Premium</h3>
-                    <p class="item-desc">Auténtico corte uruguayo a la parrilla, jugoso y con un sabor intenso.</p>
-                    <span class="item-price">$450.00</span>
+                    <h3 class="item-title">Parrillada para 4 personas</h3>
+                    <p class="item-desc">Acompañados de papas a la francesa y ensalada mixta.</p>
+                    <span class="item-price" id="precio-parrillada">$950.00</span>
                 </div>
-                <div class="item-image-container">
-                    <img src="https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?q=80&w=200&auto=format&fit=crop" alt="Corte Vacío">
-                </div>
+                <div class="item-image-container"><img src="parrillada.jpg" alt="PARRILLADA"></div>
             </div>
         </section>
 
         <section id="vinos" class="menu-section">
             <div class="category-title">Selección de Vinos</div>
-            
-            <div class="menu-item" onclick="openModal('Tannat Reserva', 'Vino tinto uruguayo por excelencia, ideal para cortes de carne.', '$850.00', 'https://images.unsplash.com/photo-1584916201218-f4242ceb4809?q=80&w=400&auto=format&fit=crop', '')">
+            <div class="menu-item" onclick="openModal('Tannat Reserva', 'Vino tinto uruguayo por excelencia. Ideal para acompañar.', document.getElementById('precio-tannat').innerText, 'vino.jpg', '')">
                 <div class="item-details">
                     <h3 class="item-title">Tannat Reserva</h3>
-                    <p class="item-desc">Vino tinto uruguayo por excelencia, ideal para cortes de carne.</p>
-                    <span class="item-price">$850.00</span>
+                    <p class="item-desc">Ideal para acompañar nuestros cortes de carne.</p>
+                    <span class="item-price" id="precio-tannat">$850.00</span>
                 </div>
-                <div class="item-image-container">
-                    <img src="https://images.unsplash.com/photo-1584916201218-f4242ceb4809?q=80&w=200&auto=format&fit=crop" alt="Vino">
-                </div>
+                <div class="item-image-container"><img src="https://images.unsplash.com/photo-1584916201218-f4242ceb4809?q=80&w=200&auto=format&fit=crop" alt="Vino"></div>
             </div>
         </section>
 
-        <section id="vip" class="menu-section"><div class="category-title">Menú VIP</div><p style="text-align:center;">Próximamente opciones exclusivas...</p></section>
-        <section id="promociones" class="menu-section"><div class="category-title">Promociones del Mes</div><p style="text-align:center;">Nuestras mejores ofertas...</p></section>
-        <section id="destilados" class="menu-section"><div class="category-title">Destilados</div><p style="text-align:center;">Selección de Tequilas, Mezcales y más...</p></section>
-        <section id="mixologia" class="menu-section"><div class="category-title">Mixología de Autor</div><p style="text-align:center;">Coctelería exclusiva de Branca...</p></section>
+        <section id="promociones" class="menu-section"><div class="category-title">Promociones</div><p style="text-align:center;">Nuestras mejores ofertas...</p></section>
+        <section id="mixologia" class="menu-section"><div class="category-title">Mixología</div><p style="text-align:center;">Coctelería exclusiva de Branca...</p></section>
+
+        <section id="encuesta" class="menu-section">
+            <div class="category-title">Tu Opinión nos Ayuda</div>
+            <div class="survey-container" id="surveyFormContainer">
+                <p>Déjanos tus comentarios para recibir una bonificación.</p>
+                <input type="email" id="userEmail" class="survey-input" placeholder="Tu correo electrónico" required>
+                <textarea id="userComments" class="survey-input" rows="3" placeholder="¿Qué te pareció nuestro servicio?"></textarea>
+                <button class="survey-btn" onclick="submitSurvey()">Enviar y Obtener Bonificación</button>
+            </div>
+            <div id="surveySuccess" class="survey-container" style="display: none;">
+                <h3 style="color: var(--accent);">¡Gracias!</h3>
+                <div id="premio-encuesta" style="font-size: 1.5rem; letter-spacing: 2px; font-weight: bold; margin: 20px 0; border: 2px dashed var(--accent); padding: 15px;">POSTRE DE CORTESÍA</div>
+            </div>
+        </section>
 
     </main>
 
+    <!-- MODAL -->
     <div id="itemModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">&times;</span>
@@ -240,20 +178,38 @@
     </div>
 
     <script>
+        // PEGA AQUÍ LA URL DE TU GOOGLE APPS SCRIPT
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxLEjVx7xUAUpE51AlC86KjDt_1GqHmeFWySNoWOtROfnr18RdUmri1Py52Q14jX3mxpg/exec';
+
+        // Actualizar precios dinámicamente al cargar la página
+        document.addEventListener("DOMContentLoaded", function() {
+            if(SCRIPT_URL === '¡PEGA_AQUI_TU_URL!') return; // Evita error si aún no pones la URL
+
+            fetch(SCRIPT_URL)
+            .then(response => response.json())
+            .then(data => {
+                if(data.costillitas) document.getElementById('precio-costillitas').innerText = '$' + parseFloat(data.costillitas).toFixed(2);
+                if(data.pizza) document.getElementById('precio-pizza').innerText = '$' + parseFloat(data.pizza).toFixed(2);
+                if(data.canelones) document.getElementById('precio-canelones').innerText = '$' + parseFloat(data.canelones).toFixed(2);
+                if(data.strudel) document.getElementById('precio-strudel').innerText = '$' + parseFloat(data.strudel).toFixed(2);
+                if(data.marquis) document.getElementById('precio-marquis').innerText = '$' + parseFloat(data.marquis).toFixed(2);
+                if(data.parrillada) document.getElementById('precio-parrillada').innerText = '$' + parseFloat(data.parrillada).toFixed(2);
+                if(data.tannat) document.getElementById('precio-tannat').innerText = '$' + parseFloat(data.tannat).toFixed(2);
+                
+                if(data.bonus) document.getElementById('premio-encuesta').innerText = data.bonus;
+            })
+            .catch(error => console.error('Error al conectar con Google Sheets:', error));
+        });
+
         function showCategory(categoryId, clickedElement) {
             const sections = document.querySelectorAll('.menu-section');
-            sections.forEach(section => {
-                section.classList.remove('active');
-            });
-
+            sections.forEach(section => section.classList.remove('active'));
             document.getElementById(categoryId).classList.add('active');
 
             const navItems = document.querySelectorAll('.nav-item');
-            navItems.forEach(item => {
-                item.classList.remove('active');
-            });
-
+            navItems.forEach(item => item.classList.remove('active'));
             clickedElement.classList.add('active');
+            
             clickedElement.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
         }
 
@@ -267,16 +223,14 @@
             const modal3D = document.getElementById("modal3D");
             const modalImg = document.getElementById("modalImg");
 
-            // Si el platillo tiene un archivo 3D (como el Strudel)
             if(model3DSrc && model3DSrc !== '') {
                 modal3D.src = model3DSrc;
-                modal3D.style.display = "block"; // Muestra el visor 3D
-                modalImg.style.display = "none"; // Oculta la imagen normal
+                modal3D.style.display = "block";
+                modalImg.style.display = "none";
             } else {
-                // Si el platillo NO tiene 3D (como las empanadas)
                 modalImg.src = imgSrc;
-                modalImg.style.display = "block"; // Muestra la imagen
-                modal3D.style.display = "none"; // Oculta el visor 3D
+                modalImg.style.display = "block";
+                modal3D.style.display = "none";
             }
             modal.style.display = "block";
         }
@@ -286,12 +240,17 @@
             document.getElementById("modal3D").src = ""; 
         }
 
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                closeModal();
+        window.onclick = function(event) { if (event.target == modal) closeModal(); }
+
+        function submitSurvey() {
+            const emailInput = document.getElementById('userEmail').value;
+            if(emailInput.includes('@') && emailInput.includes('.')) {
+                document.getElementById('surveyFormContainer').style.display = 'none';
+                document.getElementById('surveySuccess').style.display = 'block';
+            } else {
+                alert('Por favor, ingresa un correo electrónico válido.');
             }
         }
     </script>
-
 </body>
 </html>
